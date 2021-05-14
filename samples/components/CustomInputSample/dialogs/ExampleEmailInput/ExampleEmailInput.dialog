@@ -1,0 +1,50 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "vNk7wv",
+    "name": "ExampleEmailInput",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Wk0wNe"
+      },
+      "actions": [
+        {
+          "$kind": "BotBuilderCommunity.EmailInput",
+          "$designer": {
+            "id": "ajv5m8"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "resultProperty": "dialog.myemail",
+          "prompt": "${BotBuilderCommunityEmailInput_Prompt_ajv5m8()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "FCtDh8"
+          },
+          "activity": "${SendActivity_FCtDh8()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "pgDI5v"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "ExampleEmailInput.lg",
+  "recognizer": "ExampleEmailInput.lu.qna",
+  "id": "ExampleEmailInput"
+}

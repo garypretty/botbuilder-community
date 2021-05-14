@@ -1,0 +1,108 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "0jPz29",
+    "name": "TestInputSample",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "FkqPtg"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "IMvc8P"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_IMvc8P()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            "Email Input",
+            "Phone Number Input",
+            "Social media Input"
+          ],
+          "style": "heroCard",
+          "property": "dialog.InputType"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "pySPhR"
+          },
+          "condition": "= dialog.InputType",
+          "cases": [
+            {
+              "value": "Email Input",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "ZWOMjI"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ExampleEmailInput"
+                }
+              ]
+            },
+            {
+              "value": "Phone Number Input",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "KZRQJy"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ExamplePhoneNumberInput"
+                }
+              ]
+            },
+            {
+              "value": "Social media Input",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "Hma9br"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ExampleSocialMediaInput"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.RepeatDialog",
+          "$designer": {
+            "id": "mV3ir1"
+          },
+          "activityProcessed": true
+        }
+      ]
+    }
+  ],
+  "generator": "TestInputSample.lg",
+  "recognizer": "TestInputSample.lu.qna",
+  "id": "TestInputSample"
+}

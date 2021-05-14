@@ -1,0 +1,51 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "y4KfHE",
+    "name": "ExampleSocialMediaInput",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "a0xf69"
+      },
+      "actions": [
+        {
+          "$kind": "BotBuilderCommunity.SocialMediaInput",
+          "$designer": {
+            "id": "URGeIi"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "mediaType": "Mention",
+          "resultProperty": "dialog.mediatype",
+          "prompt": "${BotBuilderCommunitySocialMediaInput_Prompt_URGeIi()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "GpIGvi"
+          },
+          "activity": "${SendActivity_GpIGvi()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "aNOOAd"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "ExampleSocialMediaInput.lg",
+  "recognizer": "ExampleSocialMediaInput.lu.qna",
+  "id": "ExampleSocialMediaInput"
+}

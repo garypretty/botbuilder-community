@@ -1,0 +1,7 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_IMvc8P()
+[Activity
+    Text = Select Input Type to test
+]
+

@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# SendActivity_859266()
+[Activity
+    Text = ${Welcome()}
+]

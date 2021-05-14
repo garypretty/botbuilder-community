@@ -1,0 +1,11 @@
+[import](common.lg)
+
+# BotBuilderCommunityEmailInput_Prompt_ajv5m8()
+[Activity
+    Text = Hey , Kindly send your Email Id
+]
+
+# SendActivity_FCtDh8()
+[Activity
+    Text = Great your email address is ${dialog.myemail}
+]

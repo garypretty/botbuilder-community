@@ -1,0 +1,11 @@
+[import](common.lg)
+
+# BotBuilderCommunityPhoneNumberInput_Prompt_j7khWI()
+[Activity
+    Text = Hello , Please send your phone number
+]
+
+# SendActivity_3KrTeU()
+[Activity
+    Text = mm your phone number is ${dialog.myphonenumber}
+]

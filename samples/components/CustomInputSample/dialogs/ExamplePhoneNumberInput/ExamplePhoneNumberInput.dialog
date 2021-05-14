@@ -1,0 +1,50 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "tuXwfQ",
+    "name": "ExamplePhoneNumberInput",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Nxze8q"
+      },
+      "actions": [
+        {
+          "$kind": "BotBuilderCommunity.PhoneNumberInput",
+          "$designer": {
+            "id": "j7khWI"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "resultProperty": "dialog.myphonenumber",
+          "prompt": "${BotBuilderCommunityPhoneNumberInput_Prompt_j7khWI()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "3KrTeU"
+          },
+          "activity": "${SendActivity_3KrTeU()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "DSeaRm"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "ExamplePhoneNumberInput.lg",
+  "recognizer": "ExamplePhoneNumberInput.lu.qna",
+  "id": "ExamplePhoneNumberInput"
+}

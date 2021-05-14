@@ -1,0 +1,11 @@
+[import](common.lg)
+
+# SendActivity_GpIGvi()
+[Activity
+    Text = Bot received Mention : ${dialog.mediatype}
+]
+
+# BotBuilderCommunitySocialMediaInput_Prompt_URGeIi()
+[Activity
+    Text = Hey , Who should I send a tweet to?
+]
