@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove('$(MSBuildThisFileDirectory)../', 'Bot.Builder.Community.sln'))\CommonTargets\library.shared.targets" />
+ 
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageIcon>package-icon.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageTags>bots;botframework;botbuilder;msbot-component;msbot-middleware;TextRecognizer;email;phonenumber;address;mention;url</PackageTags>
+    <RepositoryUrl>http://www.github.com/botbuildercommunity/botbuildercommunity-dotnet
+</RepositoryUrl>
+    <PackageLicenseUrl />
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Description>Bot Composer component for Bing spell check  to correct spelling based on the language</Description>
+    <PackageProjectUrl>https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Components.Middleware.TextRecognizer</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Bot.Builder" Version="$(Bot_Builder_Version)" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs.Adaptive" Version="$(Bot_Builder_Version)" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs.Adaptive.Runtime" Version="$(Bot_Builder_Version)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bot.Builder.Community.Components.Middleware.BingSpellCheck\Bot.Builder.Community.Components.Middleware.BingSpellCheck.csproj" />
+      <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\package-icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

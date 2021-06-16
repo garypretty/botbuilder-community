@@ -1,0 +1,55 @@
+﻿{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": [ "implements(Microsoft.IDialog)" ],
+  "title": "Bing Spell Check Request",
+  "description": "Bing Spell Check API lets you perform spell checking on a text string",
+  "type": "object",
+
+  "properties": {
+
+    "BingKey": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "description": "Bing Spell check Subscription key",
+      "title": "Bing Spell Check Key",
+      "examples": [
+        "1A8BEFE4-CAF6-4B9A-BECE-9B790C9DDB7B"
+      ]
+    },
+
+    "MarketCode": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "description": "Value from callers memory to use as localization",
+      "title": "Default Market code",
+      "examples": [
+        "en-us"
+      ]
+    },
+
+    "Value": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "description": "Value from callers memory to send the text to Bing Spell",
+      "title": "Value",
+      "examples": [
+        "Hw ar yu"
+      ]
+    },
+
+    "resultProperty": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "description": "Value from callers memory to store the bing spell check result",
+      "title": "Result",
+      "examples": [
+        "How are you"
+      ]
+    },
+
+    "ErrorInfo": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "description": "Value from callers memory to store the bing spell check error information",
+      "title": "Error",
+      "examples": [
+        "Key is not found"
+      ]
+    }
+  }
+}

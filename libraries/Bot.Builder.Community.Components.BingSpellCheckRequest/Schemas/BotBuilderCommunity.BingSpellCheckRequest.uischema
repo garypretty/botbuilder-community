@@ -1,0 +1,7 @@
+﻿{
+  "$schema": "https://schemas.botframework.com/schemas/ui/v1.0/ui.schema",
+  "menu": {
+    "label": "Bing Spell Check",
+    "submenu": [ "Access external resources" ]
+  }
+}
