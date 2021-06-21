@@ -40,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AdaptiveCards" Version="2.7.1" />
     <PackageReference Include="Microsoft.Bot.Builder" Version="$(Bot_Builder_Version)" />
     <PackageReference Include="Microsoft.Bot.Builder.Dialogs.Adaptive" Version="$(Bot_Builder_Version)" />
     <PackageReference Include="Microsoft.Bot.Builder.Dialogs.Declarative" Version="$(Bot_Builder_Version)" />

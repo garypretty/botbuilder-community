@@ -1,0 +1,59 @@
+﻿{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": [ "implements(Microsoft.IDialog)", "extends(Microsoft.InputDialog)" ],
+  "title": "MultipleChoice",
+  "description": "This will return the result of arg1*arg2",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "choices": {
+      "$role": "expression",
+      "title": "List of choices",
+      "description": "Multiple choices to choose from.",
+      "oneOf": [
+        {
+          "type": "array",
+          "title": "Simple choices",
+          "description": "Simple choices to choose from.",
+          "items": [
+            {
+              "type": "string",
+              "title": "Simple choice",
+              "description": "One choice for choice input."
+            }
+          ]
+        }
+      ]
+    },
+    "Orientation": {
+      "title": "Display Type",
+      "description": "Choose the control orientation type",
+      "oneOf": [
+        {
+          "type": "object",
+          "title": "Orientation",
+          "description": "Choose the control display Type",
+          "enum": [
+            "Horizontal",
+            "Vertical"
+          ],
+          "default": "Vertical"
+        }
+      ]
+    },
+    "ActionName": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "description": "Action button caption name",
+      "title": "Action Name",
+      "examples": [
+        "Submit"
+      ]
+    },
+    "Result": {
+      "$role": "expression",
+      "$ref": "schema:#/definitions/objectExpression",
+      "description": "Value from callers memory to store the result",
+      "title": "Result"
+    }
+  }
+}

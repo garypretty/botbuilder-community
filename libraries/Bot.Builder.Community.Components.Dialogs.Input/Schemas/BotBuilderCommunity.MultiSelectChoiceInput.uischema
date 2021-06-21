@@ -1,27 +1,27 @@
-{
-  "$schema": "https://schemas.botframework.com/schemas/ui/v1.0/ui.schema",
+﻿{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
   "form": {
-    "label": "Prompt for Social Media Type",
-    "subtitle": "Social Media Type(Bot Builder Community)",
-    "description": "Collect information - Social media type(Mention or Hashtag)",
-    "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+    "label": "Prompt for Multi-Select-choice",
+    "subtitle": "Multi-Select-Choice Input(Bot Builder Community)",
+    "description": "Pick one or more values from a list of choices",
+    "helpLink": "https://aka.ms/bf-composer-docs-dialog",
     "order": [
-      "mediaType",
-      "resultProperty",
-      "defaultLocale",
+      "prompt",
+      "choices",
+      "Orientation",
+      "ActionName",
+      "Result",
       "*"
     ],
-    "properties": {
-      "resultProperty": {
-        "intellisenseScopes": [
-          "variable-scopes"
-        ]
-      }
-    }
+    "hidden": [
+      "validations",
+      "property",
+      "defaultValueResponse"
+    ]
   },
   "menu": {
-    "label": "Social Media Type",
-    "submenu": [ "Ask a question" ]
+    "label": "Multi-Select-choice",
+    "submenu": ["Ask a question"]
   },
   "flow": {
     "widget": "PromptWidget",
@@ -43,9 +43,9 @@
         "defaultContent": "<prompt>"
       }
     },
-
     "userInput": {
       "widget": "ActionCard",
+      "defaultContent": "<prompt>",
       "header": {
         "widget": "ActionHeader",
         "disableSDKTitle": false,
@@ -55,7 +55,8 @@
           "theme": "#E5F0FF",
           "icon": "#0078D4"
         }
-      }
+      },
+      "body": "=action.Result"
     }
   }
 }

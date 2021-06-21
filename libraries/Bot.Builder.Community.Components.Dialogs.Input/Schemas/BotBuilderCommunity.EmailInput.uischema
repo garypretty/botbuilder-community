@@ -3,6 +3,7 @@
   "form": {
     "label": "Prompt for a Email",
     "subtitle": "Email Input(Bot Builder Community)",
+    "description": "Collect information - Ask for a Email.",
     "helpLink": "https://aka.ms/bfc-understanding-dialogs",
     "order": [
       "resultProperty",
@@ -46,7 +47,7 @@
       "widget": "ActionCard",
       "header": {
         "widget": "ActionHeader",
-        "disableSDKTitle": true,
+        "disableSDKTitle": false,
         "icon": "User",
         "menu": "none",
         "colors": {
