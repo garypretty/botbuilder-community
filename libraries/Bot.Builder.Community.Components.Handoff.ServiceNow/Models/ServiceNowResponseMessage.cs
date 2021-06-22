@@ -9,5 +9,6 @@
         public Body[] body { get; set; }
         public bool completed { get; set; }
         public float score { get; set; }
+        public bool takeControl { get; set; }
     }
 }

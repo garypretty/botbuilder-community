@@ -53,7 +53,7 @@ namespace Bot.Builder.Community.Components.Handoff.ServiceNow
                         await HandleContentEvent(responseMessage);
 
                         // If ServiceNow indicates it's completed handoff from it's perspective we end handoff and return control.
-                        if (responseMessage.completed)
+                        if (responseMessage.completed || responseMessage.takeControl)
                         {
                             var eventActivity = EventFactory.CreateHandoffStatus(handoffRecord.ConversationReference.Conversation, "completed") as Activity;
                             await (_adapter).ContinueConversationAsync(
