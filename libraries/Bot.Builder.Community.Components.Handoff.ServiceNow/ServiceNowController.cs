@@ -180,7 +180,7 @@ namespace Bot.Builder.Community.Components.Handoff.ServiceNow
                         break;
 
                     case "OutputText":
-                        responseActivity = MessageFactory.Text(item.value.ToString() ?? item.label);
+                        responseActivity = MessageFactory.Text(item.value?.ToString() ?? item.label);
                         break;
 
                     case "OutputImage":
@@ -331,7 +331,7 @@ namespace Bot.Builder.Community.Components.Handoff.ServiceNow
                         break;
 
                     default:
-                        responseActivity = MessageFactory.Text(item.value.ToString() ?? item.label);
+                        responseActivity = MessageFactory.Text(item.value?.ToString() ?? item.label);
                         break;
                 }
 
