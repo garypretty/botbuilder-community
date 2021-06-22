@@ -223,7 +223,8 @@ namespace Bot.Builder.Community.Components.Handoff.ServiceNow
                                     {
                                         new AdaptiveTextBlock(cardData["title"]?.ToString())
                                         {
-                                            Size = AdaptiveTextSize.Medium
+                                            Size = AdaptiveTextSize.Medium,
+                                            Weight=AdaptiveTextWeight.Bolder
                                         }
                                     }
                                 },
@@ -253,6 +254,9 @@ namespace Bot.Builder.Community.Components.Handoff.ServiceNow
                                         Items = new List<AdaptiveElement>()
                                         {
                                             new AdaptiveTextBlock(field["fieldLabel"]?.ToString())
+                                            {
+                                             Weight=AdaptiveTextWeight.Bolder
+                                            }
                                         }
                                     },
                                     new AdaptiveColumn
