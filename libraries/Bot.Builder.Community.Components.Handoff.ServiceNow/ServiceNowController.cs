@@ -113,7 +113,7 @@ namespace Bot.Builder.Community.Components.Handoff.ServiceNow
                                     subtitle: option.description,
                                     images: new List<CardImage>()
                                     {
-                                        new CardImage($"https://{_credentials.ServiceNowTenant}{option.attachment}")
+                                        new CardImage($"https://{_credentials.ServiceNowTenant}/{option.attachment}")
                                     },
                                     buttons: new List<CardAction>
                                     {
