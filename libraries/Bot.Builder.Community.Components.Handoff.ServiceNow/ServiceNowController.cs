@@ -196,14 +196,9 @@ namespace Bot.Builder.Community.Components.Handoff.ServiceNow
 
                         var bodyValue = item.value as BodyValue;
 
-                        var linkHeroCard = new HeroCard(buttons: new List<CardAction>
+                        var linkHeroCard = new HeroCard(text: item.header,buttons: new List<CardAction>
                                 {new CardAction("openUrl", item.label, value: bodyValue.action)});
                         responseActivity = MessageFactory.Attachment(linkHeroCard.ToAttachment());
-
-                        if (!string.IsNullOrEmpty(item.promptMsg))
-                        {
-                            responseActivity.AsMessageActivity().Text = item.promptMsg;
-                        }
 
                         break;
 
