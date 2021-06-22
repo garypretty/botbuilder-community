@@ -130,10 +130,9 @@ namespace Bot.Builder.Community.Components.Handoff.ServiceNow
                                 cardActions.Add(new CardAction("imBack", option.description ?? option.label, value: option.label));
                             }
 
-                            var pickerHeroCard = new HeroCard(buttons: cardActions);
+                            var pickerHeroCard = new HeroCard(text: item.promptMsg ?? item.label,buttons: cardActions);
                             responseActivity = MessageFactory.Attachment(pickerHeroCard.ToAttachment());
-
-                            responseActivity.AsMessageActivity().Text = item.promptMsg ?? item.label;
+                            
                         }
 
                         break;
@@ -173,10 +172,10 @@ namespace Bot.Builder.Community.Components.Handoff.ServiceNow
 
                         booleanCardActions.Add(new CardAction("imBack", title: "Yes", displayText: "Yes", value: "true"));
                         booleanCardActions.Add(new CardAction("imBack", title: "No", displayText: "Yes", value: "false"));
-                        var booleanHeroCard = new HeroCard(buttons: booleanCardActions);
+                        var booleanHeroCard = new HeroCard(text: item.promptMsg ?? item.label,buttons: booleanCardActions);
 
                         responseActivity = MessageFactory.Attachment(booleanHeroCard.ToAttachment());
-                        responseActivity.AsMessageActivity().Text = item.promptMsg ?? item.label;
+                      
                         break;
 
                     case "OutputText":
