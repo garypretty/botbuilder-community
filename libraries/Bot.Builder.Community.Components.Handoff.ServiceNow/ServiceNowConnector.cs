@@ -27,7 +27,7 @@ namespace Bot.Builder.Community.Components.Handoff.ServiceNow
             return new ServiceNowConversationRecord { ConversationId = turnContext.Activity.Conversation.Id, ServiceNowTenant = serviceNowTenant, ServiceNowAuthConnectionName = serviceNowAuthConnectionName, Timezone = timeZone, UserId = userId, EmailId = emailId};
         }
 
-        public static ServiceNowRequestMessage MakeServiceNowMessage(int id, string conversationId, string text, string timeZone, string locale, string userId, string emailId)
+        public static ServiceNowRequestMessage MakeServiceNowMessage(int id, string conversationId, string text, string timeZone,  string userId, string emailId)
         {
             // https://docs.servicenow.com/bundle/paris-application-development/page/integrate/inbound-rest/concept/bot-api.html
 
@@ -46,10 +46,7 @@ namespace Bot.Builder.Community.Components.Handoff.ServiceNow
                 emailId = emailId,
                 timestamp = DateTimeOffset.Now.ToUnixTimeSeconds(),
                 timezone = timeZone,
-                contextVariables = new contextVariables
-                {
-                    language = locale
-                },
+                
                 clientVariables = new ClientVariables
                 {
                     conversationId = conversationId

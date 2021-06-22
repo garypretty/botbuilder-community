@@ -70,8 +70,7 @@ namespace Bot.Builder.Community.Components.Handoff.ServiceNow
                     var message = ServiceNowConnector.MakeServiceNowMessage(0,
                         serviceNowHandoffRecord.RemoteConversationId,
                         messageText,
-                        serviceNowHandoffRecord.ConversationRecord.Timezone,
-                        turnContext.Activity.Locale,
+                        serviceNowHandoffRecord.ConversationRecord.Timezone,                       
                         serviceNowHandoffRecord.ConversationRecord.UserId,
                         serviceNowHandoffRecord.ConversationRecord.EmailId);
 
