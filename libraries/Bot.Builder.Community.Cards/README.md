@@ -151,6 +151,8 @@ Internally, the cards library uses something it calls the [*card tree*](./mermai
 
 #### Tracking and forgetting
 
+![Messenger](https://user-images.githubusercontent.com/41968495/124056044-dd5e2f80-d9d9-11eb-8195-6a078439c54b.gif)
+
 Once you've set ID's in your action data, remember that you also need to track them in card manager state in order to disable them. Forgetting ID's is the opposite of tracking ID's, so it refers to removing an ID from card manager state instead of adding it. When it comes to tracking and forgetting, the question of which one enables and which one disables is determined by the tracking style. The `CardManager` class has 5 methods for disabling in this way:
 
 - `EnableIdAsync` - Tracks or forgets depending on tracking style
@@ -200,6 +202,8 @@ await cardManager.ClearTrackedIdsAsync(turnContext);
 ```
 
 #### Saving and deleting
+
+![Slack](https://user-images.githubusercontent.com/41968495/124056116-fc5cc180-d9d9-11eb-92fb-22fe8435f3e7.gif)
 
 If you're using a channel that supports message updates then you can use a card manager to delete actions, cards, carousels, and batches. Because a carousel is the same thing as an activity in this context, if you delete an action or a card without deleting the carousel then the containing activity will have to be updated rather than deleted. For example, if an activity contains three card attachments then updating the activity so that it only contains two of those attachments will effectively delete the third card. In order to update previously sent activities with modifications like that, the activities must be saved in card manager state. The `CardManager` class provides the `SaveActivitiesAsync` method for this purpose:
 
@@ -266,6 +270,8 @@ ActionBehavior.SetInHeroCard(
 The three possible values for the auto-deactivate behavior are `"on"`, `"off"`, and `"default"`. Using `"default"` will make the action behave as though it doesn't even have the auto-deactivate behavior at all, which means the cards library will just behave the way it's been configured to behave for all actions.
 
 ### Translation
+
+![Teams](https://user-images.githubusercontent.com/41968495/124056122-ff57b200-d9d9-11eb-85d2-cafdd89db0fb.gif)
 
 Multilingual bots have been able to use the [translation middleware](https://github.com/microsoft/BotBuilder-Samples/blob/main/samples/csharp_dotnetcore/17.multilingual-bot/Translation/TranslationMiddleware.cs) found in the multilingual bot sample to automatically translate incoming and outgoing activities, but that sample only translates the activities' text properties and ignores their attachments. Translating cards is more complicated because a card contains multiple strings and some of them should be translated and some of them shouldn't. As an example of something that shouldn't be translated, consider the ID string of an input element in an Adaptive Card. If that were translated into another language then the bot might not be able to recognize the input in an incoming activity's action data correctly.
 
